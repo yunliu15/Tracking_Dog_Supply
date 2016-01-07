@@ -7,7 +7,7 @@
 -->
 <page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <referenceContainer name="header-wrapper">
-        <block class="Magento\Cms\Block\Block" name="block_header_top_left" after="logo">
+        <block class="Magento\Cms\Block\Block" name="block_header_top_left" before="logo">
             <arguments>
                 <argument name="block_id" xsi:type="string">block_header_top_left</argument>
             </arguments>
@@ -15,6 +15,23 @@
     </referenceContainer>
     <referenceContainer name="footer">
         <referenceBlock name="footer_links" remove="true"/>
+        <container name="footer.top" label="Page Footer Top" htmlTag="div" htmlClass="footer-top clearfix" before="-">
+        <container name="footer.top.left" label="Page Footer Top Left" htmlTag="div" htmlClass="footer-top-left" before="-">
+            <block class="Magento\Cms\Block\Block" name="block_footer_links1">
+                <arguments>
+                    <argument name="block_id" xsi:type="string">block_footer_links1</argument>
+                </arguments>
+            </block>
+        </container>
+
+            <container name="footer.top.right" label="Page Footer Top Right" htmlTag="div" htmlClass="footer-top-right" after="footer.top.left">
+                <block class="Magento\Cms\Block\Block" name="block_footer_links2">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">block_footer_links2</argument>
+                    </arguments>
+                </block>
+            </container>
+        </container>
         <container name="footer.primary" label="Page Footer Primary" htmlTag="div" htmlClass="footer-primary clearfix">
            <container name="footer.mid" label="Page Footer Mid" htmlTag="div" htmlClass="footer-mid clearfix">
                 <block class="Magento\Cms\Block\Block" name="block_footer_column1">

@@ -9,7 +9,7 @@
     <head>
 
 
-        <css src="css/my-style.css"/>
+        <css src="css/shero-style.css" after="-"/>
 
     </head>
 
