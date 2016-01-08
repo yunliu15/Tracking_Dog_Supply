@@ -16,16 +16,18 @@
 ?>
 <?php $columnsLimit = $block->getColumnsLimit() ?: 0; ?>
 <?php $_menu = $block->getHtml('level-top', 'submenu', $columnsLimit) ?>
+<?php $url = \Magento\Framework\App\ObjectManager::getInstance()
+    ->get('Magento\Framework\UrlInterface');
+?>
 
 <nav class="navigation" role="navigation">
     <ul data-mage-init='{"menu":{"responsive":true, "expanded":true, "position":{"my":"left top","at":"left bottom"}}}'>
-        <?php $url = $block->getUrl();
-             //$base = $this->_storeManager->getStore()->getBaseUrl(\Magento\Framework\UrlInterface::URL_TYPE_MEDIA);
+        <?php //$url = Mage::helper('core/url')->getCurrentUrl();
+             $base = $this->getUrl();
         ?>
-        <!--<li class="level0 <?php //if ($url== $base) {echo 'active';}?>">
-            <a href="<?php //echo $base; ?>" class="level-top"><span><?php //echo $this->__('Home') ?></span></a>
-        </li>-->
-        <li class="level0">Home</li>
+        <li class="level0  <?php //if ($url== $base) {echo 'active';}?>"><a href="<?php echo $base; ?>" class="level-top">
+                <span class="icon i-home-w"></span>
+                <span>Home</span></a></li>
         <?php /* @escapeNotVerified */ echo $_menu; ?>
     </ul>
 

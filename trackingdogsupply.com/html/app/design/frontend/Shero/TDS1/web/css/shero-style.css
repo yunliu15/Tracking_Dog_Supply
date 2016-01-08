@@ -1,3 +1,18 @@
+/********* Fonts *******/
+
+@font-face {
+    font-family: 'league_gothicregular';
+    src: url('leaguegothic-regular.eot');
+    src: url('leaguegothic-regular.eot?#iefix') format('embedded-opentype'),
+    url('leaguegothic-regular.woff') format('woff'),
+    url('leaguegothic-regular.ttf') format('truetype'),
+    url('leaguegothic-regular.svg#league_gothicregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
 /*#### Layout #####*/
 /*
  * 12-column grid
@@ -158,10 +173,24 @@ body {color:#333!important;}
 .no-right-gutter {margin-right:0;}
 
 /***** general *****/
-body{background-color: #f5f5f5;}
-.page-header, .sections, .page-main, .page-footer,.breadcrumbs{width: 96%;
-    max-width: 1000px;
-margin:auto;
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    font-size:13px;
+}
+a:visited, .alink:visited {
+    color: #333;
+
+}
+a, .alink {
+    color: #333;
+
+}
+a:hover, .alink:hover {
+    text-decoration: none;
+}
+
+.page-header, .sections, .page-main, .page-footer,.breadcrumbs{
     background-color:#fff
 }
 .page-main, .footer-primary{border: 1px solid #dddddd;}
@@ -190,9 +219,9 @@ margin:auto;
     margin: 5px 0 0 0;
     font-size: 13px;
     font-weight: bold;
-    text-align: right;
+    text-align: center;
 }
-
+.welcome-help {text-align:center;}
 .welcome-help .help {
     font-weight: bold;
 
@@ -202,13 +231,13 @@ span.help, span.phone {
     font-size: 16px;
     line-height: 22px;
 }
-.header-top .phone {
-    background: url(../images/img/ic-phone.png) 0 center no-repeat;
+.header .phone {
+    background: url(../images/ic-phone.png) 0 center no-repeat;
     padding: 0 0 0 24px;
 }
 span.quality {
     color: #333333;
-    /*font-size: 30px;*/
+    font-size: 30px;
     font-family: 'league_gothicregular';
     text-align: left;
     font-weight: normal;
@@ -216,13 +245,76 @@ span.quality {
 
 /******* Main ********/
 .main {padding-top:20px;}
+/* navigation */
+.navigation .submenu {background-color:#fff;}
 .navigation {color:#fff;}
+.navigation .level0 {font-size:17px;}
+.navigation .level0 > .level-top, .navigation .level0 > .level-top:hover, .navigation .level0 > .level-top.ui-state-focus, .navigation .level0.active > .level-top, .navigation .level0.has-active > .level-top {
+    color: #fff;
+}
+
+.navigation .level0 > .level-top {display:block;}
+.navigation .level0 > .level-top:hover {
+    background-color: #889f23;
+}
+.navigation .level0.active > .level-top, .navigation .level0.has-active > .level-top {
+    border-color: #889f23!important;
+    color:#fff!important;
+}
+
+/*** Home **/
+/* new product */
+.product-item-info {position:relative;}
+.sticker-wrapper {
+    position: absolute;
+    transition: all 150ms ease-in-out;
+    -moz-transition: all 150ms ease-in-out;
+    -webkit-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+    z-index:2;
+}
+
+.sticker {
+    width: 40px;
+    height: 40px;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    transition: all 150ms ease-in-out;
+    -moz-transition: all 150ms ease-in-out;
+    -webkit-transition: all 150ms ease-in-out;
+    -o-transition: all 150ms ease-in-out;
+}
+
+.sticker-wrapper.top-left {
+    top: -3px;
+    left: 0px;
+}
+
+
+.sticker.new {
+    background-color: #889f23;
+    color: #ffffff;
+    font-weight:normal;
+}
+
+
+/**** catalog ***/
+.breadcrumbs {padding:5px;}
+
 /***** Footer ******/
 .page-footer{background-color: #f5f5f5;}
 .footer-top {background-color:#f5f5f5;}
 .footer-top-left {float:left;}
 .footer-top-right {float:right;}
-
+.footer-top-right img {
+    width: 28px;
+    height: 28px;
+    padding: 0 0 2px 0;
+}
+.footer.content {padding-top:10px;}
 .footer .need-help{float:left;}
 
 span.green, .contact-wrap a {
@@ -257,15 +349,20 @@ span.green, .contact-wrap a {
     margin-bottom: 1rem;}
 /* desktop only */
 @media (min-width: 768px), print {
+    .page-header, .sections, .page-main, .page-footer,.breadcrumbs{width: 96%;
+        max-width: 1000px;
+        margin:auto;}
+
     .block-search {
         clear: right;
     }
 
     .welcome-help {
         margin-left: 120px;
-        margin-bottom: -50px;
+        margin-bottom: -80px;
+        text-align:left;
     }
-
+    .free-ship {text-align:right;}
     .promo-callout-wrapper {
         display: block;
     }
@@ -275,20 +372,58 @@ span.green, .contact-wrap a {
     }
 
     /***** Navigation ******/
-    .navigation .level0 > .level-top, .navigation .level0 > .level-top:hover, .navigation .level0 > .level-top.ui-state-focus, .navigation .level0.active > .level-top, .navigation .level0.has-active > .level-top {
-        color: #fff;
-    }
-
-    .navigation .level0 > .level-top {display:block;}
-    .navigation .level0 > .level-top:hover {
-        background-color: #889f23;
-    }
+    .navigation .level0 {margin-right:0;}
+    .navigation ul {padding-left:0;}
+    .navigation .level0:first-of-type > .level-top{padding-left:20px;}
+    .navigation {border-bottom: 5px solid #889f23;}
 
     .navigation .level0.active > .level-top, .navigation .level0.has-active > .level-top {
-        border-color: #889f23;
+        border: none;
+        background-color:#889f23;
     }
+
+    span.icon {
+        width:30px;
+        height:30px;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        vertical-align: middle;
+    }
+    .icon.i-home-w {
+        display: block;
+        float: left;
+        margin: 6px 0 0 0;
+        background-color: transparent;
+        background-image: url(../images/sprite.png);
+        background-position: -7px -157px;
+        max-width: 30px;
+        max-height: 30px;
+        padding: 3px;
+
+    }
+
 }
 /* mobile only */
 @media (max-width: 768px), print {
+
+}
+
+@media only screen and (max-width: 767px){
+    .nav-sections-item-title a {color:#fff;}
+    .nav-sections-item-title.active a {color:#333;}
     .footer .need-help {font-size:15px;}
+
+
+}
+
+
+    @media (min-width: 640px){
+    .block-new-products .products-grid .product-item-info:hover,.block-new-products .products-grid .product-item-info.active {
+        margin: 0px;
+        padding: 0px;
+        border: none;
+        box-shadow: none;
+
+    }
+
 }

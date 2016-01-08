@@ -45,6 +45,9 @@ if ($exist = ($block->getProductCollection() && $block->getProductCollection()->
                         <div class="product-item-info">
                             <a href="<?php /* @escapeNotVerified */ echo $block->getProductUrl($_item) ?>" class="product-item-photo">
                                 <?php echo $block->getImage($_item, $image)->toHtml(); ?>
+                                <span class="sticker-wrapper top-left">
+                                    <span class="sticker new">New</span>
+                                </span>
                             </a>
                             <div class="product-item-details test">
                                 <strong class="product-item-name">
