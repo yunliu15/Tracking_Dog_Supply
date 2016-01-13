@@ -252,11 +252,19 @@
     }
 
     .copyright {
-        .lib-css(background-color, @copyright__background-color);
-        .lib-css(color, @color-white);
+        //.lib-css(background-color, @copyright__background-color);
+        margin: auto;
+        width: 96%;
+        max-width: 1000px;
+
+        .lib-css(color, @color-black);
         display: block;
         padding: @indent__s;
-        text-align: center;
+        text-align: left;
+
+        .credits {
+            float:right;
+        }
     }
 
     .page-header,
@@ -561,7 +569,7 @@
     .page-footer {
         .lib-css(background, @footer__background-color);
         margin-top: auto;
-        padding-bottom: @indent__m;
+        padding-bottom: 5px;
     }
 
     .footer {
