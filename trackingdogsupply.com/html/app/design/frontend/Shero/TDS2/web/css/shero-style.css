@@ -178,6 +178,9 @@ body{
     background-color: #f5f5f5;
     font-size:13px;
 }
+label, .label {color:#333;font-size:100%;padding:0;}
+.checkbox, .radio {display:initial;}
+
 a:visited, .alink:visited {
     color: #333;
 
@@ -213,7 +216,7 @@ a:hover, .alink:hover {
 .block.newsletter input {height:36px;}
 
 .pager li>a, .pager li>span {border-radius:0;}
-
+.pages .action.nonlink:hover {background-color:#f0f0f0;}
 /**** header ****/
 .nav-toggle {top:auto;bottom:42px;}
 .free-ship {
@@ -247,7 +250,14 @@ span.quality {
     font-weight: normal;
 }
 
-/******* Main ********/
+.customer-welcome ul li, .header.links li {
+    float:none;
+}
+.panel.header {height:40px;}
+.header.panel > .header.links > li > a:visited {color:#333;}
+.header.panel > .header.links > li > a:visited:hover {color:#889f23;}
+
+    /******* Main ********/
 .main {padding-top:20px;}
 
 /**** slider ******/
@@ -267,7 +277,7 @@ span.quality {
 .navigation .level0 > .level-top:hover {
     background-color: #889f23;
 }
-.navigation .level0.active > .level-top, .navigation .level0.has-active > .level-top,.navigation .level0 .submenu .active > a {
+.navigation .level0.active > .level-top, .navigation .level0.has-active > .level-top{
     border-color: #889f23!important;
     color:#fff!important;
 }
@@ -320,6 +330,10 @@ span.icon-hover, .feature-icon-hover span.icon{
 /** brands **/
 .brand-wrapper ul {padding:0;}
 .brand-widget .block-title {text-align:left;}
+.owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #666;
+}
+
 /***** Products ******/
 .abs-product-link > a:hover, .product-item-name > a:hover, .product.name a > a:hover {
     text-decoration: none;
@@ -417,7 +431,7 @@ background:#333;
 
     .block-search {width:auto;}
 
-
+    .promo-callout-wrapper img:hover {opacity:0.8;}
 
     /***** Navigation ******/
     .navigation .level0 {margin-right:0;}
@@ -444,7 +458,7 @@ background:#333;
         margin: 6px 5px 0 0;
         background-color: transparent;
         background-image: url(../images/sprite.png);
-        background-position: -7px -157px;
+        background-position: -7px -107px;
         max-width: 30px;
         max-height: 30px;
         padding: 3px;
@@ -468,6 +482,21 @@ background:#333;
         border-color: #fff transparent transparent;
     }
 
+    .navigation li:nth-of-type(2) .level1 > a span:last-of-type:after {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-bottom: 2px;
+        margin-left: 10px;
+        vertical-align: middle;
+        content: "";
+        border-style: solid solid solid solid;
+        border-width: 4px 0 4px 4px;
+        border-color: transparent transparent transparent #333;
+    }
+    .navigation .level0 .submenu .active > a {
+        border-color:#889f23;
+    }
     .brand-wrapper li {margin:0 0.5%;}
 
     /****** Category ******/
@@ -481,6 +510,25 @@ background:#333;
         font-size: 20px;
         color:#889f23;
     }
+
+    body .fotorama--fullscreen {
+        width:50%!important;
+        height:50%!important;
+        top:30%!important;
+        left:25%!important;
+    }
+    .fotorama--fullscreen .fotorama__wrap, .fotorama--fullscreen .fotorama__stage  {
+        height:100%!important;
+
+    }
+    .fotorama--fullscreen .fotorama__stage img.fotorama__img.fotorama__img--full {
+        height:auto!important;
+        width:auto!important;
+        max-height:100%!important;
+        max-width:100%!important;
+    }
+
+
     /** footer **/
     .footer-top-left {float:left;}
     .footer-top-right {float:right;padding-top:2px;margin-right:10px;}
@@ -504,9 +552,12 @@ background:#333;
         margin-bottom: 0;
         padding-bottom: 5px;
     }
+    .hometop-left .magestore-bannerslider-standard {width:100%;}
 
     .nav-sections-item-title a {color:#fff;}
     .nav-sections-item-title.active a {color:#333;}
+    .navigation .submenu:not(:first-child) .active > a {border-color:#889f23;}
+
     .footer.content {text-align:center;}
     .footer.content .links > li {margin:0;display:inline-block; float:none;}
     .footer.content .links a {padding-top:0; padding-bottom:0;}

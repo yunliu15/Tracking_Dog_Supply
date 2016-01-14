@@ -12,7 +12,24 @@
                 <argument name="block_id" xsi:type="string">block_header_top_left</argument>
             </arguments>
         </block>
+
     </referenceContainer>
+
+
+<!--
+    <referenceContainer name="header-wrapper">
+        <block class="Magento\Framework\View\Element\Html\Links" name="header.links" after="minicart">
+            <arguments>
+                <argument name="css_class" xsi:type="string">header links</argument>
+            </arguments>
+        </block>
+    </referenceContainer>-->
+
+
+     <move element="header.panel" destination="header-wrapper" after="minicart" />
+
+
+
     <referenceContainer name="footer">
         <referenceBlock name="footer_links" remove="true"/>
         <container name="footer.top" label="Page Footer Top" htmlTag="div" htmlClass="footer-top clearfix" before="-">
