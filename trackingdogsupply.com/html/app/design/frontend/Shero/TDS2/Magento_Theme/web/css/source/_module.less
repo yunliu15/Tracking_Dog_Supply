@@ -107,7 +107,7 @@
             margin-left: auto;
             margin-right: @indent__base;
             > li {
-                font-size: @font-size__base;
+                font-size: 12px;
                 margin: 0 0 0 15px;
                 > a {
                     .lib-link(
@@ -513,7 +513,7 @@
                 float: right;
                 margin-left: auto;
                 > li {
-                    margin: 0 0 0 15px;
+                    margin: 0 0 0 5px;
                     &.welcome,
                     > a {
                         display: inline-block;
@@ -539,12 +539,12 @@
             }
         }
         &.content:extend(.abs-add-clearfix-desktop all) {
-            padding: @indent__l @indent__base 0;
+            padding: @indent__base @indent__base 0;
         }
     }
 
     .logo {
-        margin: -8px auto @indent__m 0;
+        margin: -8px auto @indent__s 0;
         img {
             max-height: inherit;
         }
@@ -557,6 +557,7 @@
         min-height: 100%; // Stretch content area for sticky footer
         position: relative;
         transition: margin .3s ease-out 0;
+        border-top:5px solid #333;
         > .breadcrumbs,
         > .top-container,
         > .widget {
