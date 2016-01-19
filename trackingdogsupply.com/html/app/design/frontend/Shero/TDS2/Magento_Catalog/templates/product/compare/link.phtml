@@ -11,7 +11,7 @@
        data-bind="attr: {'href': compareProducts().listUrl}, css: {'no-display': !compareProducts().count}"
     >
         <span><?php /* @escapeNotVerified */ echo __('Compare') ?></span>
-        (<span class="counter qty" data-bind="text: compareProducts().countCaption"></span>)
+        (<span class="counter qty" data-bind="text: compareProducts().count"></span>)
     </a>
 </li>
 <script type="text/x-magento-init">

@@ -9,7 +9,11 @@
     <body>
 
         <move element="wish-list-link" destination="header.links" after="header"/>
-
+        <referenceBlock name="register-link">
+            <arguments>
+                <argument name="label" xsi:type="string" translate="true">Sign Up</argument>
+            </arguments>
+        </referenceBlock>
 
     </body>
 </page>

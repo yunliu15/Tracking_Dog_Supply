@@ -422,6 +422,15 @@ li.check {
 .block.related .product-item-info {margin:auto;padding:5px;}
 .additional-attributes-wrapper {margin-bottom: 20px;}
 
+/**** compare ****/
+.table-comparison .label {display:table-cell;}
+.table-comparison .cell.product.label,.table-comparison .cell.label {
+    border:none;
+}
+
+.table-comparison .attribute.label {text-align:left;}
+
+
     /**** catalog ***/
 .breadcrumbs {padding:5px;}
 .brand-description,.category-description {font-size:large; margin-top:20px;padding-bottom:20px; border-bottom:1px solid #e5e5e5;}

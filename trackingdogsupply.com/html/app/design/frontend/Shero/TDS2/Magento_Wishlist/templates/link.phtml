@@ -18,7 +18,7 @@ $customerSession = $objectManager->get('Magento\Customer\Model\Session');
 <li class="link wishlist" data-bind="scope: 'wishlist'">
     <a class="icon" <?php /* @escapeNotVerified */ echo $block->getLinkAttributes() ?>><span><?php echo __('Wish List');/*$block->escapeHtml($block->getLabel())*/ ?></span>
         <!-- ko if: wishlist().counter -->
-        <span data-bind="text: wishlist().counter" class="counter qty"></span>
+        <span data-bind="text: wishlist().counter.split(' ')[0] " class="counter qty"></span>
         <!-- /ko -->
     </a>
 </li>
