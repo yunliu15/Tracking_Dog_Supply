@@ -104,7 +104,7 @@
             &-item {
                 &-photo {
                     display: block;
-                    margin-bottom: @indent__s;
+
                 }
                 &-name {
                     margin-top: 0;
@@ -222,6 +222,7 @@
                 width: 100%;
                 &-info {
                     width: auto;
+                    padding:5px;
                 }
             }
         }
@@ -310,6 +311,7 @@
     .wishlist-index-index {
         .product-item-info {
             width: auto;
+            padding:5px;
         }
     }
 }
@@ -317,22 +319,21 @@
 .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
     .wishlist-index-index {
         .product-item-inner {
-            @_shadow: 3px 4px 4px 0 rgba(0, 0, 0, .3);
+           // @_shadow: 3px 4px 4px 0 rgba(0, 0, 0, .3);
 
-            .lib-css(background, @color-white);
-            .lib-css(border, @border-width__base solid @color-gray-light2);
-            border-top: none;
-            .lib-css(box-shadow, @_shadow);
-            display: none;
+            //.lib-css(background, @color-white);
+            //.lib-css(border, @border-width__base solid @color-gray-light2);
+            border: none;
+            //.lib-css(box-shadow, @_shadow);
+            //display: none;
             left: 0;
-            margin: 9px 0 0 -1px;
+           // margin: 9px 0 0 -1px;
             padding: 0 9px 9px;
-            position: absolute;
+            //position: absolute;
             right: -1px;
             z-index: 2;
-            .comment-box {
-                margin-top: -18px;
-            }
+
+
         }
     }
 }

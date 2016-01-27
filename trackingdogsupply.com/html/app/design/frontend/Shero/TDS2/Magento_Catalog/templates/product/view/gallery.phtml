@@ -79,52 +79,59 @@
 
     require([ 'jquery', 'jquery/ui'], function($){
 
-console.log('test');
-        function check_new_image(){
-            var y = $(".gallery-placeholder .fotorama__stage__shaft").length;
-            return y;
-        }
 
-        function check_changed_image(image_source){
-            var new_source = $(".fotorama__stage__frame").find("img").attr("src");
-            console.log(new_source);
-            console.log(image_source);
-            if(image_source == new_source){
-                return 0;
-            }else{
-
-                return 1;
+            var orinImg = $(".fotorama__stage__frame").find(".fotorama__img");
+//console.log('test');
+            function check_new_image(){
+                var y = $(".gallery-placeholder .fotorama__stage__shaft").length;
+                return y;
             }
-        }
 
-        function new_(){
-            var click_interval = setInterval(function(){
-                console.log(check_changed_image(current_image_source));
-                if(check_changed_image(current_image_source)){
+            function check_changed_image(image_source){
+                var new_source = $(".fotorama__stage__frame").find("img").attr("src");
+                console.log('new '+new_source);
+                console.log('img '+image_source);
+                if(image_source == new_source){
+                    return 0;
+                }else{
+
+                    return 1;
+                }
+            }
+
+            function new_(){
+                var click_interval = setInterval(function(){
+                    console.log(check_changed_image(current_image_source));
+                    if(check_changed_image(current_image_source)){
+                        $(".fotorama__stage__frame").zoom();
+                        current_image_source = $(".fotorama__stage__frame").find("img").attr("src");
+                        clearInterval(click_interval);
+
+                    }
+                },500)
+            }
+
+            var current_image_source;
+
+
+            var myVar = setInterval(function(){
+                if(check_new_image()){
                     $(".fotorama__stage__frame").zoom();
-                    current_image_source = $(".fotorama__stage__frame").find("img").attr("src");
-                    clearInterval(click_interval);
+                    clearInterval(myVar);
+
+                    current_image_source = $(".fotorama__stage__frame").find(".fotorama__img").attr("src");
+                    console.log($(".fotorama__stage__frame").find(".fotorama__img"));
+                    console.log('cur '+current_image_source);
 
                 }
             },500)
-        }
 
-        var current_image_source;
+            $(".gallery-placeholder ").on("click",".fotorama__nav__frame",function(){
+                new_();
+            })
 
 
-        var myVar = setInterval(function(){
-            if(check_new_image()){
-                $(".fotorama__stage__frame").zoom();
-                clearInterval(myVar);
-
-                current_image_source = $(".fotorama__stage__frame").find("img").attr("src");
-                console.log(current_image_source);
-            }
-        },500)
-
-        $(".gallery-placeholder ").on("click",".fotorama__nav__frame",function(){
-            new_();
-        })
+       
 
 
 
