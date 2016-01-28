@@ -36,7 +36,7 @@
 
         <!--Shop By Brands menu -->
         <?php $brandUrl = $base . "brand";?>
-        <li class="level0 nav-2 level-top parent ui-menu-item <?php if (strpos($url, $brandUrl, 0)===0) {echo 'active';}?>" role="presentation">
+        <li class="level0 nav-2 brand level-top parent ui-menu-item <?php if (strpos($url, $brandUrl, 0)===0) {echo 'active';}?>" role="presentation">
            <?php $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
               $category = $objectManager->create('Magento\Catalog\Model\Category');
               $category->load(29);
@@ -65,7 +65,7 @@
 
                     <li class="level1 nav-2-<?php echo $iterator; ?><?php if($iterator==1) {echo $first;}else if($iterator==16){echo $last;} ?> ui-menu-item" role="presentation">
                         <a id="ui-id-44" class="ui-corner-all" href="<?php echo $Ves->getUrl(); ?>" tabindex="-1" role="menuitem">
-                            <span><?php echo $Ves->getName() ?><img src="<?php echo $Ves->getThumbnailUrl(); ?>"> </span>
+                            <img src="<?php echo $Ves->getThumbnailUrl(); ?>" alt="<?php echo $Ves->getName() ?>"><span><?php echo $Ves->getName() ?> </span>
                         </a>
                     </li>
 

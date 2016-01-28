@@ -311,7 +311,7 @@ span.quality {
 }
 
 .navigation .level0 > .level-top {display:block;}
-.navigation .level0 > .level-top:hover {
+.navigation li.level0:hover > .level-top {
     background-color: #889f23;
 }
 .navigation .level0.active > .level-top, .navigation .level0.has-active > .level-top{
@@ -415,7 +415,16 @@ li.check {
     list-style: none;
 }
 
-/* related */
+.product-info-price .price-box .old-price .price-container .price {color:#7d7d7d;text-decoration: line-through;}
+
+/*gallery */
+.fotorama .fotorama__img--full {
+    display:none!important;
+}
+.fotorama .fotorama__thumb-border {
+    border-color:#889f23;
+}
+    /* related */
 .block.related .products-grid .product-item {
     width:49%;
 
@@ -591,10 +600,10 @@ p {
     float: right;
     width: 80px;
 }
-.navigation .level0 .submenu #ui-id-44 {
+/*.navigation .level0 .submenu #ui-id-44 {
     width: 310px;
 }
-
+*/
 
 
 /* desktop only */
@@ -701,6 +710,9 @@ p {
         background-image: url(../images/sprite.png);
         background-position: -7px -157px;
     }
+    nav.navigation .level0 .submenu .active > a{
+        border:none;
+    }
 
     .navigation li:nth-of-type(2) .level-top > span:last-of-type:after,.navigation li:nth-of-type(3) .level-top > span:last-of-type:after {
         display: inline-block;
@@ -715,7 +727,7 @@ p {
         border-color: #fff transparent transparent;
     }
 
-    .navigation li:nth-of-type(2) .level1 > a span:last-of-type:after {
+    /*.navigation li:nth-of-type(2) .level1 > a span:last-of-type:after {
         display: inline-block;
         width: 0;
         height: 0;
@@ -726,11 +738,39 @@ p {
         border-style: solid solid solid solid;
         border-width: 4px 0 4px 4px;
         border-color: transparent transparent transparent #333;
-    }
+    }*/
     .navigation .level0 .submenu .active > a {
         border-color:#889f23;
     }
     .brand-wrapper li {margin:0 0.5%;}
+
+    nav.navigation .level0 {position:static;}
+    nav.navigation .level0.submenu {width:100%;padding:0 2%;left:0!important;}
+    nav.navigation .level0.submenu > .level1{display:inline-block;width:16.16%;padding:0 1%;vertical-align: top;}
+    .navigation .level0 .level1.submenu {display:block!important;position:static!important;min-width:0;width:100%;font-size:14px;border:none; box-shadow: none;}
+    nav.navigation .level0 .submenu a {padding-left:0; padding-right:0;padding-top:0;}
+    nav.navigation li.level1 > a {font-weight:bold; color:#333;}
+    nav.navigation .brand li.level1 > a {font-size:15px;padding-top:5px;}
+    .navigation .level0.brand .submenu > .level1 > a {width:100%;}
+    .navigation .level1.submenu li.level2 {
+        margin-bottom:0;
+        background: url(../images/bullet.png) 3px 6px no-repeat;padding-left:15px;
+        transition: background-position 150ms ease-out;
+        -moz-transition: background-position 150ms ease-out;
+        -webkit-transition: background-position 150ms ease-out;
+        -o-transition: background-position 150ms ease-out;
+    }
+    .navigation .level1.submenu li.level2:hover {
+        background-position: 6px 6px;
+    }
+
+    .navigation .level0.brand .submenu > .level1 > a span {display:block;text-align:center;}
+    .navigation .level0.brand .submenu > .level1 > a img {float:none;max-width:100%;width:100%;}
+    nav.navigation .level0 .submenu a:hover, nav.navigation .level0 .submenu a.ui-state-focus {
+        background:#fff;
+    }
+    .navigation .level1 a:hover span {color:#889f23;}
+    .navigation .level1 > a {min-height:56px;}
 
     /****** Category ******/
     .filter-options-title {
@@ -756,6 +796,26 @@ p {
         border: 1px solid #ccc;
     }
 
+    .products .wrapper .grid .products-grid .products-related {
+        margin: 20px 0;
+    }
+
+    .product-item-name {
+        margin: 0px 15px;
+    }
+    .products-grid .price-container {padding-left:24px;}
+
+    .products-grid .product-item-inner {
+        padding: 0 9px 9px 24px;
+    }
+    .wishlist-index-index .products-grid .price-container {padding-left:0px;}
+    .opc-block-summary {
+        margin: -50% 0 20px;
+    }
+
+    .fotorama {
+        border: 1px #aaa solid;
+    }
 
 
     .fotorama--fullscreen .fotorama__wrap, .fotorama--fullscreen .fotorama__stage  {
@@ -879,23 +939,4 @@ p {
     text-transform: uppercase;
 }
 
-.products .wrapper .grid .products-grid .products-related {
-    margin: 20px 0;
-}
-
-.product-item-name {
-    margin: 0px 15px;
-}
-
-.products-grid .product-item-inner {
-    padding: 0 9px 9px 24px;
-}
-
-.opc-block-summary {
-    margin: -50% 0 20px;
-}
-
-.fotorama {
-    border: 1px #aaa solid;
-}
 
