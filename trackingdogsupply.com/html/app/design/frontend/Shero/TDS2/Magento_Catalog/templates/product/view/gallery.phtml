@@ -80,21 +80,22 @@
     require([ 'jquery', 'jquery/ui'], function($){
 
             function hide_show_oriImg() {
-                //var orinImg = $(".fotorama__stage__frame").find(".fotorama__img");
+                var orinImg = $(".fotorama__stage__frame").find(".fotorama__img");
                 $(".fotorama__stage__frame").hover(function(){
-                    //orinImg.hide();
-                    $(".fotorama__stage__frame").find(".fotorama__img").hide();
+                    orinImg.hide();
+                    //$(".fotorama__stage__frame").find(".fotorama__img").hide();
 
                 }, function(){
-                    //orinImg.show();
-                    $(".fotorama__stage__frame").find(".fotorama__img").show();
+                    orinImg.show();
+                    //$(".fotorama__stage__frame").find(".fotorama__img").show();
                 });
             }
 
 
+
             function check_new_image(){
                 //var y = $(".gallery-placeholder .fotorama__stage__shaft").length;
-                var y = $(".fotorama__stage__frame").find("img").length;
+                var y = $(".fotorama__active").find("img").length;
 
                 return y;
             }
@@ -119,6 +120,7 @@
                     if(check_changed_image(current_image_source)){
 
                         hide_show_oriImg();
+
                         $(".fotorama__active").zoom();
                         current_image_source = $(".fotorama__active").find("img").attr("src");
 
@@ -132,14 +134,19 @@
 
 
             var myVar = setInterval(function(){
+
                 if(check_new_image()){
+
+
+                    var target = $(".fotorama__active");
+
                     hide_show_oriImg();
-                    $(".fotorama__stage__frame").zoom();
+                    target.zoom();
                     clearInterval(myVar);
 
                     current_image_source = $(".fotorama__stage__frame").find(".fotorama__img").attr("src");
-                   // console.log($(".fotorama__stage__frame").find(".fotorama__img"));
-                   //console.log('cur '+current_image_source);
+                    console.log($(".fotorama__stage__frame").find(".fotorama__img"));
+                    console.log('cur '+current_image_source);
 
                 }
 
@@ -148,6 +155,10 @@
             $(".gallery-placeholder ").on("click",".fotorama__nav__frame",function(){
                 new_();
             })
+
+
+
+
 
 
 

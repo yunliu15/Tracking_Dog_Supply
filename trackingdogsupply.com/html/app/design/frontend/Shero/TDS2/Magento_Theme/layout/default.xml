@@ -25,7 +25,7 @@
         </block>
     </referenceContainer>-->
 
-
+    <move element="header.panel" destination="header-wrapper" after="minicart" />
      <move element="header.panel" destination="header-wrapper" after="minicart" />
      <referenceBlock name="header" remove="true" />
 

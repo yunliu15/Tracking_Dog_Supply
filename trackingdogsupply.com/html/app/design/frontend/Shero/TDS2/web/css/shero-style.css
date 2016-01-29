@@ -200,7 +200,7 @@ a:hover, .alink:hover {
     background-color: #f5f5f5;
 }
 
-
+form .label {text-align:left;}
 
 .page-header, .sections, .page-main, .page-footer,.breadcrumbs{
     background-color:#fff
@@ -220,7 +220,7 @@ a:hover, .alink:hover {
     overflow: hidden;
 }
 .pager .toolbar-amount {display:none;}
-
+iframe {max-width:100%;}
 .block.newsletter input {height:35px;}
 
 .pager li>a, .pager li>span {border-radius:0;}
@@ -228,7 +228,7 @@ a:hover, .alink:hover {
 /**** header ****/
 .page-header {margin-top:0;}
 
-.nav-toggle {top:auto;bottom:16%;}
+.nav-toggle {position:relative;top:200px;width:50px;}
 .free-ship {
     width: 100%;
     float: right;
@@ -289,7 +289,8 @@ span.quality {
 .header.panel > .header.links > li {vertical-align: middle;}
 
 /** mini cart **/
-#mini-cart .product-item-name {min-height:0;}
+#mini-cart .product-item-name,.minicart-items .product-item-name {min-height:0;}
+
 
     /******* Main ********/
 .main {padding-top:20px;}
@@ -349,8 +350,8 @@ span.icon-hover, .feature-icon-hover span.icon{
 
 
 /* popular */
-.page-layout-1column .block-popular-products .products-grid .product-item {margin-right:-0.5%;}
-
+/*.page-layout-1column .block-popular-products .products-grid .product-item {margin-right:-0.5%;}*/
+.block-popular-products  .products-grid .product-item {display:block; float:left;}
 /* new product */
 .product-item-info {position:relative;}
 .sticker-wrapper {
@@ -418,12 +419,17 @@ li.check {
 .product-info-price .price-box .old-price .price-container .price {color:#7d7d7d;text-decoration: line-through;}
 
 /*gallery */
-.fotorama .fotorama__img--full {
+/*.fotorama .fotorama__img--full {
     display:none!important;
-}
+}*/
+html.fotorama__fullscreen .zoomImg,html.fotorama__fullscreen .fotorama__img:not(.fotorama__img--full) {display:none!important;}
+
+
 .fotorama .fotorama__thumb-border {
     border-color:#889f23;
 }
+
+
     /* related */
 .block.related .products-grid .product-item {
     width:49%;
@@ -446,6 +452,11 @@ li.check {
 .breadcrumbs {padding:5px;}
 .brand-description,.category-description {font-size:large; margin-top:20px;padding-bottom:20px; border-bottom:1px solid #e5e5e5;}
 .brand-description p,.category-description p {margin-bottom:0;}
+
+
+
+/***** Checkout ******/
+.action-auth-toggle:hover {text-decoration:none;}
 
 
 /***** Footer ******/
@@ -598,7 +609,8 @@ p {
 
 .navigation .level0 .submenu img {
     float: right;
-    width: 80px;
+    width: 100px;
+    margin-right:20px;
 }
 /*.navigation .level0 .submenu #ui-id-44 {
     width: 310px;
@@ -829,7 +841,7 @@ p {
         max-width:100%!important;
     }
 
-
+    .fotorama__stage .fotorama__arr--prev,.fotorama__stage .fotorama__arr--next {display:none!important;}
 
 
     /*** My Account **/
@@ -926,6 +938,7 @@ p {
         outline:none;
 
     }
+    .nav-toggle {top:190px;}
 
 }
 
