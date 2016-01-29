@@ -816,6 +816,7 @@ p {
         margin: 0px 15px;
     }
     .products-grid .price-container {padding-left:24px;}
+    .related .products-grid .price-container{padding-left:0;}
 
     .products-grid .product-item-inner {
         padding: 0 9px 9px 24px;
