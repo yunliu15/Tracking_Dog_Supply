@@ -29,7 +29,7 @@
      <move element="header.panel" destination="header-wrapper" after="minicart" />
      <referenceBlock name="header" remove="true" />
 
-
+    <move element="brand.view.container" destination="content" before="-" />
     <referenceContainer name="footer">
         <referenceBlock name="footer_links" remove="true"/>
         <container name="footer.top" label="Page Footer Top" htmlTag="div" htmlClass="footer-top clearfix" before="-">
